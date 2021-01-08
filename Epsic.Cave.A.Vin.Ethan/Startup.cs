@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Epsic.Cave.A.Vin.Ethan.Data;
+using Epsic.Cave.A.Vin.Ethan.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,6 +35,10 @@ namespace Epsic.Cave.A.Vin.Ethan
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Epsic.Cave.A.Vin.Ethan", Version = "v1" });
             });
+
+            services.AddDbContext<EpsicCaveAVinDataContext>(x => x.UseSqlite(@"Data Source=CustomerDB.db;"));
+
+            services.AddSingleton<IUsersService, UsersService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
