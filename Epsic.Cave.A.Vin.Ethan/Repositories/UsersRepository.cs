@@ -57,16 +57,17 @@ namespace Epsic.Cave.A.Vin.Ethan.Repositories
             return userDb;
         }
 
-        //public Task<List<UserSummaryViewModel>> Search(string name)
-        //{
-        //    return _context.Users.Where(c => string.IsNullOrWhiteSpace(name) || c.Username.Contains(name)).Select(t => 
-        //    new UserSummaryViewModel
-        //    {
-        //        Id = t.Id,
-        //        Username = t.Username
-        //    }).ToListAsync();
-        //}
-
+        public Task<List<UserSummaryViewModel>> Search(string name)
+        {
+            return _context.Users.Where(c => string.IsNullOrWhiteSpace(name) || c.Firstname.Contains(name)).Select(t =>
+            new UserSummaryViewModel
+            {
+                Id = t.Id,
+                Firstname = t.Firstname,
+                Lastname = t.LastName
+            }).ToListAsync();
+        }
+        
         public async Task<int> Delete(int id)
         {
             _context.Users.Remove(await _context.Users.FirstOrDefaultAsync(c => c.Id == id));

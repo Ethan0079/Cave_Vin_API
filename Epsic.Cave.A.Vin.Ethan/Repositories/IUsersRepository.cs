@@ -14,7 +14,7 @@ namespace Epsic.Cave.A.Vin.Ethan.Repositories
         Task<UserDetailViewModel> GetSingle(int id);
 
         // Task<int> RemoveCharacterFromUser(int userId, int characterId);
-        // Task<List<UserSummaryViewModel>> Search(string username);
+        Task<List<UserSummaryViewModel>> Search(string username);
         Task<User> UpdateAsync(int id, UpdateUserDto userToUpdate);
     }
 }

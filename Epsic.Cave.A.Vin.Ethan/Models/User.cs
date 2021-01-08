@@ -1,5 +1,4 @@
 using Epsic.Cave.A.Vin.Ethan.Enums;
-using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
 namespace Epsic.Cave.A.Vin.Ethan.Models
@@ -50,4 +49,11 @@ namespace Epsic.Cave.A.Vin.Ethan.Models
         public string Email { get; set; }
         public int Age { get; set; }
     }
+    public class UserSummaryViewModel
+    {
+        public int Id { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+    }
+
 }
