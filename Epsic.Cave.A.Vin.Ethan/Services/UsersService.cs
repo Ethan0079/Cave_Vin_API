@@ -64,9 +64,9 @@ namespace Epsic.Cave.A.Vin.Ethan.Services
 
         public Task<List<UserSummaryViewModel>> GetAll(string filterByName)
         {
-            if (filterByName?.Length < 4)
+            if (filterByName?.Length < 4){
                 throw new ArgumentOutOfRangeException("Firstname length must be greater than 3.");
-
+            }
             return _usersRepository.Search(filterByName);
         }
 

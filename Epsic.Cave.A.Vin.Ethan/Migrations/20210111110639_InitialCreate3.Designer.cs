@@ -3,14 +3,16 @@ using System;
 using Epsic.Cave.A.Vin.Ethan.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Epsic.Cave.A.Vin.Ethan.Migrations
 {
     [DbContext(typeof(EpsicCaveAVinDataContext))]
-    partial class EpsicCaveAVinDataContextModelSnapshot : ModelSnapshot
+    [Migration("20210111110639_InitialCreate3")]
+    partial class InitialCreate3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,9 +22,6 @@ namespace Epsic.Cave.A.Vin.Ethan.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("CaveId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("Date")
@@ -40,29 +39,9 @@ namespace Epsic.Cave.A.Vin.Ethan.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CaveId");
-
                     b.HasIndex("OwnerId");
 
                     b.ToTable("Bottles");
-                });
-
-            modelBuilder.Entity("Epsic.Cave.A.Vin.Ethan.Models.Cave", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Degree")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Caves");
                 });
 
             modelBuilder.Entity("Epsic.Cave.A.Vin.Ethan.Models.User", b =>
@@ -97,15 +76,9 @@ namespace Epsic.Cave.A.Vin.Ethan.Migrations
 
             modelBuilder.Entity("Epsic.Cave.A.Vin.Ethan.Models.Bottle", b =>
                 {
-                    b.HasOne("Epsic.Cave.A.Vin.Ethan.Models.Cave", "Cave")
-                        .WithMany()
-                        .HasForeignKey("CaveId");
-
                     b.HasOne("Epsic.Cave.A.Vin.Ethan.Models.User", "Owner")
                         .WithMany()
                         .HasForeignKey("OwnerId");
-
-                    b.Navigation("Cave");
 
                     b.Navigation("Owner");
                 });

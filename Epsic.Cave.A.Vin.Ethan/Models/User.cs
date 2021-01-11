@@ -20,6 +20,7 @@ namespace Epsic.Cave.A.Vin.Ethan.Models
         public string Email { get; set; }
 
         [Required]
+        [UserAgeValidator]
         public int Age { get; set; }
 
         [Required]
@@ -48,6 +49,7 @@ namespace Epsic.Cave.A.Vin.Ethan.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public int Age { get; set; }
+        public TypeUser Type { get; set; } = TypeUser.User;
     }
     public class UserSummaryViewModel
     {

@@ -19,5 +19,54 @@ namespace Epsic.Cave.A.Vin.Ethan.Models
         [Required]
         public TypeVin Typevin { get; set; }
         
+        [Required]
+        public User Owner { get; set; }
+
+        [Required]
+        public Cave Cave { get; set; }
     }
+    public class CreateBottleDto {
+
+        public string Name { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public TypeVin Typevin { get; set; }
+        
+        public User Owner { get; set; }
+        public Cave Cave { get; set; }
+    }
+
+        public class UpdateBottleDto {
+
+        public string Name { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public TypeVin Typevin { get; set; }
+        
+        public User Owner { get; set; }
+        public Cave Cave { get; set; }
+    }
+    public class BottleDetailViewModel {
+
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public TypeVin Typevin { get; set; }
+        
+        public User Owner { get; set; }
+        public Cave Cave { get; set; }
+    }
+    public class BottleSummaryViewModel {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public DateTime Date { get; set; }
+    }
+    
 }
