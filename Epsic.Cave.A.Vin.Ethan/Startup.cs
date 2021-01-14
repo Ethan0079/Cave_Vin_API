@@ -41,8 +41,12 @@ namespace Epsic_Cave_A_Vin_Ethan
 
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IUsersRepository, UsersRepository>();
+
             services.AddTransient<IBottlesService, BottlesService>();
             services.AddTransient<IBottlesRepository, BottlesRepository>();
+
+            services.AddTransient<ICavesService, CavesService>();
+            services.AddTransient<ICavesRepository, CavesRepository>();
 
             services.AddCors(options =>
             {
