@@ -23,7 +23,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Models
        public int Degree { get; set; }
     }
     public class UpdateCaveDto {
-        public int Id { get; set; }
         public string Location { get; set; }
         public int Degree { get; set; }
     }

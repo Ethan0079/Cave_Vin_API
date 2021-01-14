@@ -3,14 +3,16 @@ using System;
 using Epsic_Cave_A_Vin_Ethan.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Epsic_Cave_A_Vin_Ethan.Migrations
 {
     [DbContext(typeof(EpsicCaveAVinDataContext))]
-    partial class EpsicCaveAVinDataContextModelSnapshot : ModelSnapshot
+    [Migration("20210114090249_InitialCreate11")]
+    partial class InitialCreate11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +27,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CaveId")
+                    b.Property<int?>("CaveId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("Date")
@@ -105,9 +107,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Migrations
                 {
                     b.HasOne("Epsic_Cave_A_Vin_Ethan.Models.Cave", "Cave")
                         .WithMany()
-                        .HasForeignKey("CaveId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CaveId");
 
                     b.HasOne("Epsic_Cave_A_Vin_Ethan.Models.User", "Owner")
                         .WithMany()

@@ -36,7 +36,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
         public async Task<Cave> UpdateAsync(int id, UpdateCaveDto caveToUpdate)
         {
             var cave = await _context.Caves.FirstAsync(c => c.Id == id);
-
+            // Console.WriteLine(cave);
             cave.Location = caveToUpdate.Location;
             cave.Degree = caveToUpdate.Degree;
             

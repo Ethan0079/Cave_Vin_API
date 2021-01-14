@@ -86,24 +86,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             return await _context.SaveChangesAsync();
         }
 
-        //public async Task<int> AddCharacterToBottle(int bottleId, int characterId)
-        //{
-        //    var bottleDb = await _context.Bottles.Include(t => t.Characters).FirstOrDefaultAsync(c => c.Id == bottleId);
-
-        //    bottleDb.Characters.Add(_context.Characters.Find(characterId));
-
-        //    return await _context.SaveChangesAsync();
-        //}
-
-        //public async Task<int> RemoveCharacterFromBottle(int bottleId, int characterId)
-        //{
-        //    var bottleDb = await _context.Bottles.Include(t => t.Characters).FirstOrDefaultAsync(c => c.Id == bottleId);
-
-        //    bottleDb.Characters.Remove(bottleDb.Characters.First(c => c.Id == characterId));
-
-        //    return await _context.SaveChangesAsync();
-        //}
-
         public Task<bool> ExistsById(int id)
         {
             return _context.Bottles.AnyAsync(c => c.Id == id);
