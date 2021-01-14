@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic.Cave.A.Vin.Ethan\\Epsic.Cave.A.Vin.Ethan.csproj": {}
+    "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic_Cave_A_Vin_Ethan\\Epsic_Cave_A_Vin_Ethan.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic.Cave.A.Vin.Ethan\\Epsic.Cave.A.Vin.Ethan.csproj": {
+    "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic_Cave_A_Vin_Ethan\\Epsic_Cave_A_Vin_Ethan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic.Cave.A.Vin.Ethan\\Epsic.Cave.A.Vin.Ethan.csproj",
-        "projectName": "Epsic.Cave.A.Vin.Ethan",
-        "projectPath": "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic.Cave.A.Vin.Ethan\\Epsic.Cave.A.Vin.Ethan.csproj",
+        "projectUniqueName": "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic_Cave_A_Vin_Ethan\\Epsic_Cave_A_Vin_Ethan.csproj",
+        "projectName": "Epsic_Cave_A_Vin_Ethan",
+        "projectPath": "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic_Cave_A_Vin_Ethan\\Epsic_Cave_A_Vin_Ethan.csproj",
         "packagesPath": "C:\\Users\\EthanMarchand-BS-Tea\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic.Cave.A.Vin.Ethan\\obj\\",
+        "outputPath": "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic_Cave_A_Vin_Ethan\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\EthanMarchand-BS-Tea\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -9,6 +9,6 @@ public class UserAgeValidator : ValidationAttribute
         if (age >= 16)
             return ValidationResult.Success;
             
-        return new ValidationResult("Désolé vous n'avez pas l'âge pour boire.");
+        return new ValidationResult("Désolé vous n'avez pas l'âge pour posséder du vin !");
     }
 }

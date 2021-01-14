@@ -1,13 +1,13 @@
-using Epsic.Cave.A.Vin.Ethan.Enums;
+using Epsic_Cave_A_Vin_Ethan.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Epsic.Cave.A.Vin.Ethan.Models
+namespace Epsic_Cave_A_Vin_Ethan.Models
 {
     public class User
     {
         [Key]
         public int Id { get; set; }
-
+        
         [Required]
         [StringLength(25)]
         public string Firstname { get; set; }
@@ -34,6 +34,7 @@ namespace Epsic.Cave.A.Vin.Ethan.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public int Age { get; set; }
+        public TypeUser Type { get; set; } = TypeUser.User;
     }
 
     public class CreateUserDto

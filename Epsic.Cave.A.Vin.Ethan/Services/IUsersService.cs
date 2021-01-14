@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Epsic.Cave.A.Vin.Ethan.Models;
+using Epsic_Cave_A_Vin_Ethan.Models;
 
-namespace Epsic.Cave.A.Vin.Ethan.Services
+namespace Epsic_Cave_A_Vin_Ethan.Services
 {
     public interface IUsersService
     {

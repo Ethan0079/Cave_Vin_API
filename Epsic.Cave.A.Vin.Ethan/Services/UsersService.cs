@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Epsic.Cave.A.Vin.Ethan.Exceptions;
-using Epsic.Cave.A.Vin.Ethan.Models;
-using Epsic.Cave.A.Vin.Ethan.Repositories;
+using Epsic_Cave_A_Vin_Ethan.Exceptions;
+using Epsic_Cave_A_Vin_Ethan.Models;
+using Epsic_Cave_A_Vin_Ethan.Repositories;
 
-namespace Epsic.Cave.A.Vin.Ethan.Services
+namespace Epsic_Cave_A_Vin_Ethan.Services
 {
 
     public class UsersService : IUsersService
@@ -40,8 +40,8 @@ namespace Epsic.Cave.A.Vin.Ethan.Services
             if (!await _usersRepository.ExistsById(id))
                 throw new DataNotFoundException($"User Id:{id} doesn't exists.");
 
-            if (await _usersRepository.ExistsByName(userToUpdate.Firstname))
-                throw new ArgumentException(nameof(userToUpdate.Firstname), $"User {userToUpdate.Firstname} already exists.");
+            // if (await _usersRepository.ExistsByName(userToUpdate.Firstname))
+            //     throw new ArgumentException(nameof(userToUpdate.Firstname), $"User {userToUpdate.Firstname} already exists.");
 
             return await _usersRepository.UpdateAsync(id, userToUpdate);
         }

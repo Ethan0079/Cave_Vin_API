@@ -1,11 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Epsic.Cave.A.Vin.Ethan.Data;
-using Epsic.Cave.A.Vin.Ethan.Models;
+using Epsic_Cave_A_Vin_Ethan.Data;
+using Epsic_Cave_A_Vin_Ethan.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Epsic.Cave.A.Vin.Ethan.Repositories
+namespace Epsic_Cave_A_Vin_Ethan.Repositories
 {
 
     public class BottlesRepository : IBottlesRepository
@@ -19,14 +20,17 @@ namespace Epsic.Cave.A.Vin.Ethan.Repositories
         public Task<BottleDetailViewModel> GetSingle(int id)
         {
             return _context.Bottles.Select(t => new BottleDetailViewModel
-                                 {
-                                     Id = t.Id,
-                                     Name = t.Name,
-                                     Date = t.Date,
-                                     Typevin = t.Typevin,
-                                     Owner = t.Owner,
-                                     Cave = t.Cave
-                                 }).FirstOrDefaultAsync(c => c.Id == id);
+            {
+                Id = t.Id,
+                Name = t.Name,
+                Date = t.Date,
+                Typevin = t.Typevin,
+                Owner = t.Owner,
+                Cave = t.Cave,
+                Amount = t.Amount,
+                PricePerBottle = t.PricePerBottle
+
+            }).FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<Bottle> UpdateAsync(int id, UpdateBottleDto bottleToUpdate)
@@ -36,8 +40,10 @@ namespace Epsic.Cave.A.Vin.Ethan.Repositories
             bottle.Name = bottleToUpdate.Name;
             bottle.Date = bottleToUpdate.Date;
             bottle.Typevin = bottleToUpdate.Typevin;
-            bottle.Owner = bottleToUpdate.Owner;
-            bottle.Cave = bottleToUpdate.Cave;
+            bottle.Amount = bottleToUpdate.Amount;
+            bottle.PricePerBottle = bottleToUpdate.PricePerBottle;
+            bottle.OwnerId = bottleToUpdate.OwnerId;
+            bottle.CaveId = bottleToUpdate.CaveId; 
 
             await _context.SaveChangesAsync();
 
@@ -50,8 +56,10 @@ namespace Epsic.Cave.A.Vin.Ethan.Repositories
             bottleDb.Name = bottleToCreate.Name;
             bottleDb.Date = bottleToCreate.Date;
             bottleDb.Typevin = bottleToCreate.Typevin;
-            bottleDb.Owner = bottleToCreate.Owner;
-            bottleDb.Cave = bottleToCreate.Cave;
+            bottleDb.OwnerId = bottleToCreate.OwnerId;
+            bottleDb.CaveId = bottleToCreate.CaveId;
+            bottleDb.Amount = bottleToCreate.Amount;
+            bottleDb.PricePerBottle = bottleToCreate.PricePerBottle;
 
             _context.Bottles.Add(bottleDb);
             await _context.SaveChangesAsync();
@@ -66,7 +74,9 @@ namespace Epsic.Cave.A.Vin.Ethan.Repositories
             {
                 Id = t.Id,
                 Name = t.Name,
-                Date = t.Date
+                Date = t.Date,
+                Amount = t.Amount,
+                PricePerBottle = t.PricePerBottle
             }).ToListAsync();
         }
         
@@ -102,6 +112,10 @@ namespace Epsic.Cave.A.Vin.Ethan.Repositories
         public Task<bool> ExistsByName(string name)
         {
             return _context.Bottles.AnyAsync(c => c.Name == name);
+        }
+        public Task<bool> ExistsByNameAndDate(string name, DateTime date)
+        {
+            return _context.Bottles.AnyAsync(c => c.Name == name && c.Date.Year == date.Year);
         }
     }
 }

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Epsic_Cave_A_Vin_Ethan.Migrations
 {
     [DbContext(typeof(EpsicCaveAVinDataContext))]
-    [Migration("20210111112905_InitialCreate5")]
-    partial class InitialCreate5
+    [Migration("20210112070058_InitialCreate6")]
+    partial class InitialCreate6
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,10 @@ namespace Epsic_Cave_A_Vin_Ethan.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("CaveId")
+                    b.Property<int>("Amount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CaveId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("Date")
@@ -34,7 +37,10 @@ namespace Epsic_Cave_A_Vin_Ethan.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("OwnerId")
+                    b.Property<int>("OwnerId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PricePerBottle")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Typevin")
@@ -101,11 +107,15 @@ namespace Epsic_Cave_A_Vin_Ethan.Migrations
                 {
                     b.HasOne("Epsic_Cave_A_Vin_Ethan.Models.Cave", "Cave")
                         .WithMany()
-                        .HasForeignKey("CaveId");
+                        .HasForeignKey("CaveId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Epsic_Cave_A_Vin_Ethan.Models.User", "Owner")
                         .WithMany()
-                        .HasForeignKey("OwnerId");
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Cave");
 

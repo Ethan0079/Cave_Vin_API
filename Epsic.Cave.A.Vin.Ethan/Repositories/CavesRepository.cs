@@ -1,0 +1,92 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Epsic_Cave_A_Vin_Ethan.Data;
+using Epsic_Cave_A_Vin_Ethan.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace Epsic_Cave_A_Vin_Ethan.Repositories
+{
+
+    public class CavesRepository : ICavesRepository
+    {
+        private readonly EpsicCaveAVinDataContext _context;
+        public CavesRepository(EpsicCaveAVinDataContext context)
+        {
+            _context = context;
+        }
+
+        // public Task<CaveDetailViewModel> GetSingle(int id)
+        // {
+        //     return _context.Caves.Select(t => new CaveDetailViewModel
+        //     {
+        //         Id = t.Id,
+        //         Name = t.Name,
+        //         Date = t.Date,
+        //         Typevin = t.Typevin,
+        //         Owner = t.Owner,
+        //         Cave = t.Cave,
+        //         Amount = t.Amount,
+        //         PricePerCave = t.PricePerCave
+
+        //     }).FirstOrDefaultAsync(c => c.Id == id);
+        // }
+
+        public async Task<Cave> UpdateAsync(int id, UpdateCaveDto caveToUpdate)
+        {
+            var cave = await _context.Caves.FirstAsync(c => c.Id == id);
+
+            cave.Location = caveToUpdate.Location;
+            cave.Degree = caveToUpdate.Degree;
+            
+            await _context.SaveChangesAsync();
+
+            return cave;
+        }
+
+        public async Task<Cave> CreateAsync(CreateCaveDto caveToCreate)
+        {
+            var caveDb = new Cave();
+            caveDb.Location = caveToCreate.Location;
+            caveDb.Degree = caveToCreate.Degree;
+
+            _context.Caves.Add(caveDb);
+            await _context.SaveChangesAsync();
+
+            return caveDb;
+        }
+
+        public Task<List<CaveSummaryViewModel>> Search(string locationName)
+        {
+            return _context.Caves.Where(c => string.IsNullOrWhiteSpace(locationName) || c.Location.Contains(locationName)).Select(t =>
+            new CaveSummaryViewModel
+            {
+                Id = t.Id,
+                Location = t.Location,
+                Degree = t.Degree,
+
+            }).ToListAsync();
+        }
+        
+        public async Task<int> Delete(int id)
+        {
+            _context.Caves.Remove(await _context.Caves.FirstOrDefaultAsync(c => c.Id == id));
+            return await _context.SaveChangesAsync();
+        }
+
+        public Task<bool> ExistsById(int id)
+        {
+            return _context.Caves.AnyAsync(c => c.Id == id);
+        }
+
+        public Task<bool> ExistsByName(string locationName)
+        {
+            return _context.Caves.AnyAsync(c => c.Location == locationName);
+        }
+        public Task<bool> ExistsByLocationAndDegree(string locationName, int degree)
+        {
+            return _context.Caves.AnyAsync(c => c.Location == locationName && c.Degree == degree);
+        }
+    }
+}

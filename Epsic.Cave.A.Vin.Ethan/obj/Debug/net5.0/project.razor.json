@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic.Cave.A.Vin.Ethan\\Epsic.Cave.A.Vin.Ethan.csproj",
+  "FilePath": "c:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic_Cave_A_Vin_Ethan\\Epsic_Cave_A_Vin_Ethan.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15600,7 +15600,7 @@
     ],
     "CSharpLanguageVersion": 900
   },
-  "RootNamespace": "Epsic.Cave.A.Vin.Ethan",
+  "RootNamespace": "Epsic_Cave_A_Vin_Ethan",
   "Documents": [],
   "SerializationFormat": "0.2"
 }

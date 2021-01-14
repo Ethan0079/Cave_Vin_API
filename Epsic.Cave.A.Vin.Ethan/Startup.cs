@@ -1,6 +1,6 @@
 
-using Epsic.Cave.A.Vin.Ethan.Data;
-using Epsic.Cave.A.Vin.Ethan.Services;
+using Epsic_Cave_A_Vin_Ethan.Data;
+using Epsic_Cave_A_Vin_Ethan.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -8,9 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Epsic.Cave.A.Vin.Ethan.Repositories;
+using Epsic_Cave_A_Vin_Ethan.Repositories;
 
-namespace Epsic.Cave.A.Vin.Ethan
+namespace Epsic_Cave_A_Vin_Ethan
 {
     public class Startup
     {
@@ -32,7 +32,7 @@ namespace Epsic.Cave.A.Vin.Ethan
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Epsic.Cave.A.Vin.Ethan", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Epsic_Cave_A_Vin_Ethan", Version = "v1" });
             });
 
             services.AddDbContext<EpsicCaveAVinDataContext>(x => x.UseSqlite(@"Data Source=EpsicCaveAVin.db;"));
@@ -61,7 +61,7 @@ namespace Epsic.Cave.A.Vin.Ethan
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Epsic.Cave.A.Vin.Ethan v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Epsic_Cave_A_Vin_Ethan v1"));
             }
 
             app.UseCors("CorsPolicy");

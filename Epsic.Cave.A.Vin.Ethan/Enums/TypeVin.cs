@@ -1,4 +1,4 @@
-namespace Epsic.Cave.A.Vin.Ethan.Enums
+namespace Epsic_Cave_A_Vin_Ethan.Enums
 {
     public enum TypeVin
     {

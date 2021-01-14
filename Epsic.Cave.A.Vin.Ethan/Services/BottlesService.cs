@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Epsic.Cave.A.Vin.Ethan.Exceptions;
-using Epsic.Cave.A.Vin.Ethan.Models;
-using Epsic.Cave.A.Vin.Ethan.Repositories;
+using Epsic_Cave_A_Vin_Ethan.Exceptions;
+using Epsic_Cave_A_Vin_Ethan.Models;
+using Epsic_Cave_A_Vin_Ethan.Repositories;
 
-namespace Epsic.Cave.A.Vin.Ethan.Services
+namespace Epsic_Cave_A_Vin_Ethan.Services
 {
 
     public class BottlesService : IBottlesService
@@ -64,7 +64,7 @@ namespace Epsic.Cave.A.Vin.Ethan.Services
 
         public Task<List<BottleSummaryViewModel>> GetAll(string filterByName)
         {
-            if (filterByName?.Length < 4){
+            if (filterByName?.Length < 4) {
                 throw new ArgumentOutOfRangeException("Name length must be greater than 3.");
             }
             return _bottlesRepository.Search(filterByName);

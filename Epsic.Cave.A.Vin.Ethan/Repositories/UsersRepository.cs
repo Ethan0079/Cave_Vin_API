@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Epsic.Cave.A.Vin.Ethan.Data;
-using Epsic.Cave.A.Vin.Ethan.Models;
+using Epsic_Cave_A_Vin_Ethan.Data;
+using Epsic_Cave_A_Vin_Ethan.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Epsic.Cave.A.Vin.Ethan.Repositories
+namespace Epsic_Cave_A_Vin_Ethan.Repositories
 {
 
     public class UsersRepository : IUsersRepository
@@ -24,7 +24,8 @@ namespace Epsic.Cave.A.Vin.Ethan.Repositories
                                      Firstname = t.Firstname,
                                      LastName = t.LastName,
                                      Email = t.Email,
-                                     Age = t.Age
+                                     Age = t.Age,
+                                     Type = t.Type
                                  }).FirstOrDefaultAsync(c => c.Id == id);
         }
 

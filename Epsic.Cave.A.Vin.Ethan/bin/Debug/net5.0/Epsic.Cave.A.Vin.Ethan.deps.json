@@ -23,7 +23,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Epsic.Cave.A.Vin.Ethan/1.0.0": {
+      "Epsic_Cave_A_Vin_Ethan/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.1",
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "5.0.1",
@@ -314,10 +314,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "Epsic.Cave.A.Vin.Ethan.dll": {}
+          "Epsic_Cave_A_Vin_Ethan.dll": {}
         },
         "compile": {
-          "Epsic.Cave.A.Vin.Ethan.dll": {}
+          "Epsic_Cave_A_Vin_Ethan.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -2502,7 +2502,7 @@
     }
   },
   "libraries": {
-    "Epsic.Cave.A.Vin.Ethan/1.0.0": {
+    "Epsic_Cave_A_Vin_Ethan/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

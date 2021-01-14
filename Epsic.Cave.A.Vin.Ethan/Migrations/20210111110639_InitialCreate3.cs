@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Epsic.Cave.A.Vin.Ethan.Migrations
+namespace Epsic_Cave_A_Vin_Ethan.Migrations
 {
     public partial class InitialCreate3 : Migration
     {

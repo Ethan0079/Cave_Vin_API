@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "4QT+C9M+UpSAabJCTR1M4hZmaf/mWG7A73XpCKpYjybfg9QGWil0z3XG5HhKZWIhy9qdLDXJYuHe+bad1e9GBA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic.Cave.A.Vin.Ethan\\Epsic.Cave.A.Vin.Ethan.csproj",
+  "projectFilePath": "C:\\Users\\EthanMarchand-BS-Tea\\source\\repos\\Cave_Vin_API\\Epsic_Cave_A_Vin_Ethan\\Epsic_Cave_A_Vin_Ethan.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EthanMarchand-BS-Tea\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\EthanMarchand-BS-Tea\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.1\\microsoft.aspnetcore.authentication.jwtbearer.5.0.1.nupkg.sha512",

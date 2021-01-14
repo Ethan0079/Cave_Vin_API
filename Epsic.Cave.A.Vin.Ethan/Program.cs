@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Epsic.Cave.A.Vin.Ethan
+namespace Epsic_Cave_A_Vin_Ethan
 {
     public class Program
     {

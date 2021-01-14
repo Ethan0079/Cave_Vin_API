@@ -2,7 +2,7 @@
 
 namespace Epsic_Cave_A_Vin_Ethan.Migrations
 {
-    public partial class InitialCreate2 : Migration
+    public partial class InitialCreate7 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

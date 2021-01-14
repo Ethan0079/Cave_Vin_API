@@ -1,12 +1,12 @@
 using System;
 using System.Threading.Tasks;
-using Epsic.Cave.A.Vin.Ethan.Exceptions;
-using Epsic.Cave.A.Vin.Ethan.Models;
-using Epsic.Cave.A.Vin.Ethan.Services;
+using Epsic_Cave_A_Vin_Ethan.Exceptions;
+using Epsic_Cave_A_Vin_Ethan.Models;
+using Epsic_Cave_A_Vin_Ethan.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace Epsic.Cave.A.Vin.Ethan.Controllers
+namespace Epsic_Cave_A_Vin_Ethan.Controllers
 {
     [ApiController]
     public class UsersController : ControllerBase

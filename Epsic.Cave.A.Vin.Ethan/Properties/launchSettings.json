@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Epsic.Cave.A.Vin.Ethan": {
+    "Epsic_Cave_A_Vin_Ethan": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
