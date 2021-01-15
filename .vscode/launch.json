@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Epsic.Cave.A.Vin.Ethan/bin/Debug/net5.0/Epsic.Cave.A.Vin.Ethan.dll",
+            "program": "${workspaceFolder}/Epsic_Cave_A_Vin_Ethan/bin/Debug/net5.0/Epsic_Cave_A_Vin_Ethan.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Epsic.Cave.A.Vin.Ethan",
+            "cwd": "${workspaceFolder}/Epsic_Cave_A_Vin_Ethan",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {

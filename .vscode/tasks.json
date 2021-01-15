@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Epsic.Cave.A.Vin.Ethan/Epsic.Cave.A.Vin.Ethan.csproj",
+                "${workspaceFolder}/Epsic_Cave_A_Vin_Ethan/Epsic_Cave_A_Vin_Ethan.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/Epsic.Cave.A.Vin.Ethan/Epsic.Cave.A.Vin.Ethan.csproj",
+                "${workspaceFolder}/Epsic_Cave_A_Vin_Ethan/Epsic_Cave_A_Vin_Ethan.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/Epsic.Cave.A.Vin.Ethan/Epsic.Cave.A.Vin.Ethan.csproj",
+                "${workspaceFolder}/Epsic_Cave_A_Vin_Ethan/Epsic_Cave_A_Vin_Ethan.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

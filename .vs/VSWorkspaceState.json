@@ -1,12 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Epsic.Cave.A.Vin.Ethan",
-    "\\Epsic.Cave.A.Vin.Ethan\\Controllers",
-    "\\Epsic.Cave.A.Vin.Ethan\\Enums",
-    "\\Epsic.Cave.A.Vin.Ethan\\Models",
-    "\\Epsic.Cave.A.Vin.Ethan\\Validations"
+    "\\Epsic_Cave_A_Vin_Ethan",
+    "\\Epsic_Cave_A_Vin_Ethan\\Controllers",
+    "\\Epsic_Cave_A_Vin_Ethan\\Enums",
+    "\\Epsic_Cave_A_Vin_Ethan\\Models",
+    "\\Epsic_Cave_A_Vin_Ethan\\Validations"
   ],
-  "SelectedNode": "\\Epsic.Cave.A.Vin.Ethan\\Epsic.Cave.A.Vin.Ethan.csproj",
+  "SelectedNode": "\\Epsic_Cave_A_Vin_Ethan\\Epsic_Cave_A_Vin_Ethan.csproj",
   "PreviewInSolutionExplorer": false
 }
