@@ -16,7 +16,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
         Task<BottleDetailViewModel> GetSingle(int id);
 
         // Task<int> RemoveCharacterFromBottle(int userId, int characterId);
-        Task<List<BottleSummaryViewModel>> Search(string name);
+        Task<List<BottleDetailViewModel>> Search(string name);
         Task<Bottle> UpdateAsync(int id, UpdateBottleDto bottleToUpdate);
     }
 }

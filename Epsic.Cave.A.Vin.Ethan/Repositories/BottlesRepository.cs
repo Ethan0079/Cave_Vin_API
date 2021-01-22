@@ -67,16 +67,24 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             return bottleDb;
         }
 
-        public Task<List<BottleSummaryViewModel>> Search(string name)
+        public Task<List<BottleDetailViewModel>> Search(string name)
         {
-            return _context.Bottles.Where(c => string.IsNullOrWhiteSpace(name) || c.Name.Contains(name)).Select(t =>
-            new BottleSummaryViewModel
+            return _context.Bottles
+                .Include(x => x.Owner)
+                .Include(y => y.Cave)
+                .Where(c => string.IsNullOrWhiteSpace(name) || c.Name.Contains(name)).Select(t =>
+            new BottleDetailViewModel
             {
                 Id = t.Id,
                 Name = t.Name,
                 Date = t.Date,
                 Amount = t.Amount,
-                PricePerBottle = t.PricePerBottle
+                PricePerBottle = t.PricePerBottle,
+                Typevin = t.Typevin,
+                Cave = t.Cave,
+                CaveId = t.CaveId,
+                Owner = t.Owner,
+                OwnerId = t.OwnerId
             }).ToListAsync();
         }
         

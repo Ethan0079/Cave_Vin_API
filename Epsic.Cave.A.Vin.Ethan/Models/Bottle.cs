@@ -58,7 +58,9 @@ namespace Epsic_Cave_A_Vin_Ethan.Models
         public int Amount { get; set; }
         public int PricePerBottle { get; set; }
         public User Owner { get; set; }
+        public int OwnerId { get; set; }
         public Cave Cave { get; set; }
+        public int CaveId { get; set; }
     }
     public class BottleSummaryViewModel {
         public int Id { get; set; }

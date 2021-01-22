@@ -62,7 +62,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Services
             return modelDb;
         }
 
-        public Task<List<BottleSummaryViewModel>> GetAll(string filterByName)
+        public Task<List<BottleDetailViewModel>> GetAll(string filterByName)
         {
             if (filterByName?.Length < 4) {
                 throw new ArgumentOutOfRangeException("Name length must be greater than 3.");
@@ -83,57 +83,5 @@ namespace Epsic_Cave_A_Vin_Ethan.Services
             else
                 return false;
         }
-
-        //public async Task<bool> AddCharacterToBottle(AddCharacterToBottleDto addCharacterToBottle)
-        //{
-        //    if (addCharacterToBottle == null)
-        //        throw new ArgumentNullException(nameof(addCharacterToBottle));
-
-        //    if (addCharacterToBottle.BottleId < 1)
-        //        throw new ArgumentOutOfRangeException(nameof(addCharacterToBottle.BottleId), addCharacterToBottle.BottleId, "Bottle Id cannot be lower than 1.");
-
-        //    if (addCharacterToBottle.CharacterId < 1)
-        //        throw new ArgumentOutOfRangeException(nameof(addCharacterToBottle.CharacterId), addCharacterToBottle.CharacterId, "Character Id cannot be lower than 1.");
-
-        //    if (!await _bottlesRepository.ExistsById(addCharacterToBottle.BottleId))
-        //        throw new DataNotFoundException($"Bottle Id:{addCharacterToBottle.BottleId} doesn't exists.");
-
-        //    // Ici, si on avait un CharacterRepository on devrait checker si le CharacterId existe dans la db
-        //    // if (!_characterRepository.ExistsById(addCharacterToBottle.CharacterId))
-        //    //     throw new DataNotFoundException($"CharacterId:{addCharacterToBottle.CharacterId} doesn't exists.");
-
-        //    var result = await _bottlesRepository.AddCharacterToBottle(addCharacterToBottle.BottleId, addCharacterToBottle.CharacterId);
-
-        //    if (result == 1)
-        //        return true;
-        //    else
-        //        return false;
-        //}
-
-        //public async Task<bool> RemoveCharacterFromBottle(RemoveCharacterFromBottleDto removeCharacterFromBottle)
-        //{
-        //    if (removeCharacterFromBottle == null)
-        //        throw new ArgumentNullException(nameof(removeCharacterFromBottle));
-
-        //    if (removeCharacterFromBottle.BottleId < 1)
-        //        throw new ArgumentOutOfRangeException(nameof(removeCharacterFromBottle.BottleId), removeCharacterFromBottle.BottleId, "Bottle Id cannot be lower than 1.");
-
-        //    if (removeCharacterFromBottle.CharacterId < 1)
-        //        throw new ArgumentOutOfRangeException(nameof(removeCharacterFromBottle.CharacterId), removeCharacterFromBottle.CharacterId, "Character Id cannot be lower than 1.");
-
-        //    if (!await _bottlesRepository.ExistsById(removeCharacterFromBottle.BottleId))
-        //        throw new DataNotFoundException($"Bottle Id:{removeCharacterFromBottle.BottleId} doesn't exists.");
-
-        //    // Ici, si on avait un CharacterRepository on devrait checker si le CharacterId existe dans la db
-        //    // if (!_characterRepository.ExistsById(addCharacterToBottle.CharacterId))
-        //    //     throw new DataNotFoundException($"CharacterId:{addCharacterToBottle.CharacterId} doesn't exists.");
-
-        //    var result = await _bottlesRepository.RemoveCharacterFromBottle(removeCharacterFromBottle.BottleId, removeCharacterFromBottle.CharacterId);
-
-        //    if (result == 1)
-        //        return true;
-        //    else
-        //        return false;
-        //}
     }
 }
