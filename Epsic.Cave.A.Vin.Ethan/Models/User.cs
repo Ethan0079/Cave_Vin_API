@@ -7,26 +7,21 @@ namespace Epsic_Cave_A_Vin_Ethan.Models
     {
         [Key]
         public int Id { get; set; }
-        
         [Required]
         [StringLength(25)]
         public string Firstname { get; set; }
-
         [Required]
         [StringLength(25)]
         public string LastName { get; set; }
-
         [EmailAddress]
         public string Email { get; set; }
-
         [Required]
         [UserAgeValidator]
         public int Age { get; set; }
-
         [Required]
         public TypeUser Type { get; set; } = TypeUser.User;
-         
     }
+
     public class UserDetailViewModel
     {
         public int Id { get; set; }
@@ -44,6 +39,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Models
         public string Email { get; set; }
         public int Age { get; set; }
     }
+
     public class UpdateUserDto
     {
         public string Firstname { get; set; }
@@ -52,11 +48,11 @@ namespace Epsic_Cave_A_Vin_Ethan.Models
         public int Age { get; set; }
         public TypeUser Type { get; set; } = TypeUser.User;
     }
+
     public class UserSummaryViewModel
     {
         public int Id { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
     }
-
 }

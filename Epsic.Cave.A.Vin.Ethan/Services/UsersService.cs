@@ -7,7 +7,6 @@ using Epsic_Cave_A_Vin_Ethan.Repositories;
 
 namespace Epsic_Cave_A_Vin_Ethan.Services
 {
-
     public class UsersService : IUsersService
     {
         private readonly IUsersRepository _usersRepository;
@@ -39,9 +38,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Services
 
             if (!await _usersRepository.ExistsById(id))
                 throw new DataNotFoundException($"User Id:{id} doesn't exists.");
-
-            // if (await _usersRepository.ExistsByName(userToUpdate.Firstname))
-            //     throw new ArgumentException(nameof(userToUpdate.Firstname), $"User {userToUpdate.Firstname} already exists.");
 
             return await _usersRepository.UpdateAsync(id, userToUpdate);
         }
@@ -84,56 +80,5 @@ namespace Epsic_Cave_A_Vin_Ethan.Services
                 return false;
         }
 
-        //public async Task<bool> AddCharacterToUser(AddCharacterToUserDto addCharacterToUser)
-        //{
-        //    if (addCharacterToUser == null)
-        //        throw new ArgumentNullException(nameof(addCharacterToUser));
-
-        //    if (addCharacterToUser.UserId < 1)
-        //        throw new ArgumentOutOfRangeException(nameof(addCharacterToUser.UserId), addCharacterToUser.UserId, "User Id cannot be lower than 1.");
-
-        //    if (addCharacterToUser.CharacterId < 1)
-        //        throw new ArgumentOutOfRangeException(nameof(addCharacterToUser.CharacterId), addCharacterToUser.CharacterId, "Character Id cannot be lower than 1.");
-
-        //    if (!await _usersRepository.ExistsById(addCharacterToUser.UserId))
-        //        throw new DataNotFoundException($"User Id:{addCharacterToUser.UserId} doesn't exists.");
-
-        //    // Ici, si on avait un CharacterRepository on devrait checker si le CharacterId existe dans la db
-        //    // if (!_characterRepository.ExistsById(addCharacterToUser.CharacterId))
-        //    //     throw new DataNotFoundException($"CharacterId:{addCharacterToUser.CharacterId} doesn't exists.");
-
-        //    var result = await _usersRepository.AddCharacterToUser(addCharacterToUser.UserId, addCharacterToUser.CharacterId);
-
-        //    if (result == 1)
-        //        return true;
-        //    else
-        //        return false;
-        //}
-
-        //public async Task<bool> RemoveCharacterFromUser(RemoveCharacterFromUserDto removeCharacterFromUser)
-        //{
-        //    if (removeCharacterFromUser == null)
-        //        throw new ArgumentNullException(nameof(removeCharacterFromUser));
-
-        //    if (removeCharacterFromUser.UserId < 1)
-        //        throw new ArgumentOutOfRangeException(nameof(removeCharacterFromUser.UserId), removeCharacterFromUser.UserId, "User Id cannot be lower than 1.");
-
-        //    if (removeCharacterFromUser.CharacterId < 1)
-        //        throw new ArgumentOutOfRangeException(nameof(removeCharacterFromUser.CharacterId), removeCharacterFromUser.CharacterId, "Character Id cannot be lower than 1.");
-
-        //    if (!await _usersRepository.ExistsById(removeCharacterFromUser.UserId))
-        //        throw new DataNotFoundException($"User Id:{removeCharacterFromUser.UserId} doesn't exists.");
-
-        //    // Ici, si on avait un CharacterRepository on devrait checker si le CharacterId existe dans la db
-        //    // if (!_characterRepository.ExistsById(addCharacterToUser.CharacterId))
-        //    //     throw new DataNotFoundException($"CharacterId:{addCharacterToUser.CharacterId} doesn't exists.");
-
-        //    var result = await _usersRepository.RemoveCharacterFromUser(removeCharacterFromUser.UserId, removeCharacterFromUser.CharacterId);
-
-        //    if (result == 1)
-        //        return true;
-        //    else
-        //        return false;
-        //}
     }
 }

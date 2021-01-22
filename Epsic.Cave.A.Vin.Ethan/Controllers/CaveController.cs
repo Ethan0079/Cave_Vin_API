@@ -31,24 +31,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Controllers
             }
         }
 
-        // [HttpGet("caves/{id}")]
-        // public async Task<IActionResult> GetSingleAsync(int id)
-        // {
-        //     try
-        //     {
-        //         var result = await _cavesService.GetSingle(id);
-
-        //         if (result == null)
-        //             return NotFound();
-
-        //         return Ok(result);
-        //     }
-        //     catch (ArgumentException ex)
-        //     {
-        //         return BadRequest(ex.Message);
-        //     }
-        // }
-
         [HttpPost("caves/{id}")]
         public async Task<IActionResult> UpdateAsync([FromRoute] int id, [FromBody] UpdateCaveDto model)
         {

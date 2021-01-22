@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Epsic_Cave_A_Vin_Ethan.Repositories
 {
-
     public class BottlesRepository : IBottlesRepository
     {
         private readonly EpsicCaveAVinDataContext _context;

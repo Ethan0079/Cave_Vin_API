@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Epsic_Cave_A_Vin_Ethan.Repositories
 {
-
     public class UsersRepository : IUsersRepository
     {
         private readonly EpsicCaveAVinDataContext _context;
@@ -19,14 +18,14 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
         public Task<UserDetailViewModel> GetSingle(int id)
         {
             return _context.Users.Select(t => new UserDetailViewModel
-                                 {
-                                     Id = t.Id,
-                                     Firstname = t.Firstname,
-                                     LastName = t.LastName,
-                                     Email = t.Email,
-                                     Age = t.Age,
-                                     Type = t.Type
-                                 }).FirstOrDefaultAsync(c => c.Id == id);
+            {
+                Id = t.Id,
+                Firstname = t.Firstname,
+                LastName = t.LastName,
+                Email = t.Email,
+                Age = t.Age,
+                Type = t.Type
+            }).FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<User> UpdateAsync(int id, UpdateUserDto userToUpdate)
@@ -38,7 +37,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             user.Email = userToUpdate.Email;
             user.Age = userToUpdate.Age;
 
-
             await _context.SaveChangesAsync();
 
             return user;
@@ -46,11 +44,13 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
 
         public async Task<User> CreateAsync(CreateUserDto userToCreate)
         {
-            var userDb = new User();
-            userDb.Firstname = userToCreate.Firstname;
-            userDb.LastName = userToCreate.LastName;
-            userDb.Email = userToCreate.Email;
-            userDb.Age = userToCreate.Age;
+            var userDb = new User
+            {
+                Firstname = userToCreate.Firstname,
+                LastName = userToCreate.LastName,
+                Email = userToCreate.Email,
+                Age = userToCreate.Age
+            };
 
             _context.Users.Add(userDb);
             await _context.SaveChangesAsync();
@@ -74,24 +74,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             _context.Users.Remove(await _context.Users.FirstOrDefaultAsync(c => c.Id == id));
             return await _context.SaveChangesAsync();
         }
-
-        //public async Task<int> AddCharacterToUser(int userId, int characterId)
-        //{
-        //    var userDb = await _context.Users.Include(t => t.Characters).FirstOrDefaultAsync(c => c.Id == userId);
-
-        //    userDb.Characters.Add(_context.Characters.Find(characterId));
-
-        //    return await _context.SaveChangesAsync();
-        //}
-
-        //public async Task<int> RemoveCharacterFromUser(int userId, int characterId)
-        //{
-        //    var userDb = await _context.Users.Include(t => t.Characters).FirstOrDefaultAsync(c => c.Id == userId);
-
-        //    userDb.Characters.Remove(userDb.Characters.First(c => c.Id == characterId));
-
-        //    return await _context.SaveChangesAsync();
-        //}
 
         public Task<bool> ExistsById(int id)
         {

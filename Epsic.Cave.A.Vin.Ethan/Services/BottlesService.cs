@@ -7,7 +7,6 @@ using Epsic_Cave_A_Vin_Ethan.Repositories;
 
 namespace Epsic_Cave_A_Vin_Ethan.Services
 {
-
     public class BottlesService : IBottlesService
     {
         private readonly IBottlesRepository _bottlesRepository;

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Epsic_Cave_A_Vin_Ethan.Repositories
 {
-
     public class CavesRepository : ICavesRepository
     {
         private readonly EpsicCaveAVinDataContext _context;
@@ -16,22 +14,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
         {
             _context = context;
         }
-
-        // public Task<CaveDetailViewModel> GetSingle(int id)
-        // {
-        //     return _context.Caves.Select(t => new CaveDetailViewModel
-        //     {
-        //         Id = t.Id,
-        //         Name = t.Name,
-        //         Date = t.Date,
-        //         Typevin = t.Typevin,
-        //         Owner = t.Owner,
-        //         Cave = t.Cave,
-        //         Amount = t.Amount,
-        //         PricePerCave = t.PricePerCave
-
-        //     }).FirstOrDefaultAsync(c => c.Id == id);
-        // }
 
         public async Task<Cave> UpdateAsync(int id, UpdateCaveDto caveToUpdate)
         {
@@ -47,9 +29,11 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
 
         public async Task<Cave> CreateAsync(CreateCaveDto caveToCreate)
         {
-            var caveDb = new Cave();
-            caveDb.Location = caveToCreate.Location;
-            caveDb.Degree = caveToCreate.Degree;
+            var caveDb = new Cave
+            {
+                Location = caveToCreate.Location,
+                Degree = caveToCreate.Degree
+            };
 
             _context.Caves.Add(caveDb);
             await _context.SaveChangesAsync();
@@ -65,7 +49,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
                 Id = t.Id,
                 Location = t.Location,
                 Degree = t.Degree,
-
             }).ToListAsync();
         }
         

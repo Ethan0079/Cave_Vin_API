@@ -94,41 +94,5 @@ namespace Epsic_Cave_A_Vin_Ethan.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-        //[HttpDelete("users/characters")]
-        //public async Task<IActionResult> RemoveCharacterFromUserAsync(RemoveCharacterFromUserDto removeCharacterFromUser)
-        //{
-        //    try
-        //    {
-        //        await _usersService.RemoveCharacterFromUser(removeCharacterFromUser);
-        //        return Ok();
-        //    }
-        //    catch (DataNotFoundException ex)
-        //    {
-        //        return NotFound(ex.Message);
-        //    }
-        //    catch (ArgumentException ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
-
-        //[HttpPost("users/characters")]
-        //public async Task<IActionResult> AddCharacterToUserAsync(AddCharacterToUserDto addCharacterToUser)
-        //{
-        //    try
-        //    {
-        //        await _usersService.AddCharacterToUser(addCharacterToUser);
-        //        return Ok();
-        //    }
-        //    catch (DataNotFoundException ex)
-        //    {
-        //        return NotFound(ex.Message);
-        //    }
-        //    catch (ArgumentException ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
     }
 }

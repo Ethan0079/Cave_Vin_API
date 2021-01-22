@@ -65,7 +65,7 @@ namespace Epsic_Cave_A_Vin_Ethan
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Epsic_Cave_A_Vin_Ethan v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cave à vin - Ethan Marchand"));
             }
 
             app.UseCors("CorsPolicy");

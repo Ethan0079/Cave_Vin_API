@@ -7,7 +7,6 @@ using Epsic_Cave_A_Vin_Ethan.Repositories;
 
 namespace Epsic_Cave_A_Vin_Ethan.Services
 {
-
     public class CavesService : ICavesService
     {
         private readonly ICavesRepository _cavesRepository;
@@ -15,16 +14,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Services
         {
             _cavesRepository = cavesRepository;
         }
-
-        // public async Task<CaveDetailViewModel> GetSingle(int id)
-        // {
-        //     if (id < 1)
-        //         throw new ArgumentOutOfRangeException(nameof(id), id, "Id cannot be lower than 1.");
-
-        //     var caveDb = await _cavesRepository.GetSingle(id);
-
-        //     return caveDb;
-        // }
 
         public async Task<Cave> UpdateAsync(int id, UpdateCaveDto caveToUpdate)
         {
@@ -39,9 +28,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Services
 
             if (!await _cavesRepository.ExistsById(id))
                 throw new DataNotFoundException($"Cave Id:{id} doesn't exists.");
-
-            // if (await _cavesRepository.ExistsByName(caveToUpdate.Name))
-            //     throw new ArgumentException(nameof(caveToUpdate.Name), $"Cave {caveToUpdate.Name} already exists.");
 
             return await _cavesRepository.UpdateAsync(id, caveToUpdate);
         }
