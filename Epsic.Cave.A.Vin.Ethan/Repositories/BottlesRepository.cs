@@ -28,7 +28,8 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
                 Owner = t.Owner,
                 Cave = t.Cave,
                 Amount = t.Amount,
-                PricePerBottle = t.PricePerBottle
+                PricePerBottle = t.PricePerBottle,
+                ImageUrl = t.ImageUrl
 
             }).FirstOrDefaultAsync(c => c.Id == id);
         }
@@ -43,7 +44,8 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             bottle.Amount = bottleToUpdate.Amount;
             bottle.PricePerBottle = bottleToUpdate.PricePerBottle;
             bottle.OwnerId = bottleToUpdate.OwnerId;
-            bottle.CaveId = bottleToUpdate.CaveId; 
+            bottle.CaveId = bottleToUpdate.CaveId;
+            bottle.ImageUrl = bottleToUpdate.ImageUrl;
 
             await _context.SaveChangesAsync();
 
@@ -52,14 +54,17 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
 
         public async Task<Bottle> CreateAsync(CreateBottleDto bottleToCreate)
         {
-            var bottleDb = new Bottle();
-            bottleDb.Name = bottleToCreate.Name;
-            bottleDb.Date = bottleToCreate.Date;
-            bottleDb.Typevin = bottleToCreate.Typevin;
-            bottleDb.OwnerId = bottleToCreate.OwnerId;
-            bottleDb.CaveId = bottleToCreate.CaveId;
-            bottleDb.Amount = bottleToCreate.Amount;
-            bottleDb.PricePerBottle = bottleToCreate.PricePerBottle;
+            var bottleDb = new Bottle
+            {
+                Name = bottleToCreate.Name,
+                Date = bottleToCreate.Date,
+                Typevin = bottleToCreate.Typevin,
+                OwnerId = bottleToCreate.OwnerId,
+                CaveId = bottleToCreate.CaveId,
+                Amount = bottleToCreate.Amount,
+                PricePerBottle = bottleToCreate.PricePerBottle,
+                ImageUrl = bottleToCreate.ImageUrl ?? "/assets/img/image-not-found.png"
+            };
 
             _context.Bottles.Add(bottleDb);
             await _context.SaveChangesAsync();
@@ -84,7 +89,8 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
                 Cave = t.Cave,
                 CaveId = t.CaveId,
                 Owner = t.Owner,
-                OwnerId = t.OwnerId
+                OwnerId = t.OwnerId,
+                ImageUrl = t.ImageUrl
             }).ToListAsync();
         }
         

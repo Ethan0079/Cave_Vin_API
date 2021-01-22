@@ -3,14 +3,16 @@ using System;
 using Epsic_Cave_A_Vin_Ethan.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Epsic_Cave_A_Vin_Ethan.Migrations
 {
     [DbContext(typeof(EpsicCaveAVinDataContext))]
-    partial class EpsicCaveAVinDataContextModelSnapshot : ModelSnapshot
+    [Migration("20210122133115_InitialCreate13")]
+    partial class InitialCreate13
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,9 +31,6 @@ namespace Epsic_Cave_A_Vin_Ethan.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("Date")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ImageUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")

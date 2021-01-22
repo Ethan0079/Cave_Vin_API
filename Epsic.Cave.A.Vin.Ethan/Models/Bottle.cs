@@ -25,6 +25,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Models
         public Cave Cave { get; set; }
         [Required]
         public int CaveId { get; set; }
+        public string ImageUrl { get; set; }
     }
     public class CreateBottleDto {
         public string Name { get; set; }
@@ -34,6 +35,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Models
         public int PricePerBottle { get; set; }   
         public int OwnerId { get; set; }
         public int CaveId { get; set; }
+        public string ImageUrl { get; set; }
     }
 
         public class UpdateBottleDto {
@@ -45,7 +47,8 @@ namespace Epsic_Cave_A_Vin_Ethan.Models
             public int PricePerBottle { get; set; }
             public int OwnerId { get; set; }
             public int CaveId { get; set; }
-        }
+            public string ImageUrl { get; set; }
+    }
     public class BottleDetailViewModel {
 
         public int Id { get; set; }
@@ -61,6 +64,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Models
         public int OwnerId { get; set; }
         public Cave Cave { get; set; }
         public int CaveId { get; set; }
+        public string ImageUrl { get; set; }
     }
     public class BottleSummaryViewModel {
         public int Id { get; set; }
@@ -70,6 +74,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Models
         public DateTime Date { get; set; }
         public int Amount { get; set; }
         public int PricePerBottle { get; set; }
+        public string ImageUrl { get; set; }
     }
     
 }
