@@ -1,12 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Epsic_Cave_A_Vin_Ethan",
-    "\\Epsic_Cave_A_Vin_Ethan\\Controllers",
-    "\\Epsic_Cave_A_Vin_Ethan\\Enums",
-    "\\Epsic_Cave_A_Vin_Ethan\\Models",
-    "\\Epsic_Cave_A_Vin_Ethan\\Validations"
+    "\\Epsic.Cave.A.Vin.Ethan.Tests",
+    "\\Epsic.Cave.A.Vin.Ethan.Tests\\Services"
   ],
-  "SelectedNode": "\\Epsic_Cave_A_Vin_Ethan\\Epsic_Cave_A_Vin_Ethan.csproj",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

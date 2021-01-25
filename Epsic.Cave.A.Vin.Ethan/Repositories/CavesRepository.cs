@@ -21,7 +21,8 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             // Console.WriteLine(cave);
             cave.Location = caveToUpdate.Location;
             cave.Degree = caveToUpdate.Degree;
-            
+            cave.ImageUrl = caveToUpdate.ImageUrl;
+
             await _context.SaveChangesAsync();
 
             return cave;
@@ -32,7 +33,8 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             var caveDb = new Cave
             {
                 Location = caveToCreate.Location,
-                Degree = caveToCreate.Degree
+                Degree = caveToCreate.Degree,
+                ImageUrl = caveToCreate.ImageUrl
             };
 
             _context.Caves.Add(caveDb);
@@ -49,6 +51,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
                 Id = t.Id,
                 Location = t.Location,
                 Degree = t.Degree,
+                ImageUrl = t.ImageUrl
             }).ToListAsync();
         }
         
