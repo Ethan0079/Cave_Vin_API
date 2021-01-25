@@ -10,6 +10,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
         Task<Cave> CreateAsync(CreateCaveDto caveToCreate);
         Task<int> Delete(int id);
         Task<bool> ExistsById(int id);
+        Task<CaveSummaryViewModel> GetSingle(int id);
         Task<bool> ExistsByName(string locationName);
         Task<bool> ExistsByLocationAndDegree(string locationName, int degree);
         Task<List<CaveSummaryViewModel>> Search(string locationName);

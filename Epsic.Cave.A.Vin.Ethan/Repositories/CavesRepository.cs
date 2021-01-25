@@ -42,6 +42,16 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
 
             return caveDb;
         }
+        public Task<CaveSummaryViewModel> GetSingle(int id)
+        {
+            return _context.Caves.Select(t => new CaveSummaryViewModel
+            {
+                Id = t.Id,
+                Location = t.Location,
+                Degree = t.Degree,
+                ImageUrl = t.ImageUrl
+            }).FirstOrDefaultAsync(c => c.Id == id);
+        }
 
         public Task<List<CaveSummaryViewModel>> Search(string locationName)
         {

@@ -32,6 +32,16 @@ namespace Epsic_Cave_A_Vin_Ethan.Services
             return await _cavesRepository.UpdateAsync(id, caveToUpdate);
         }
 
+        public async Task<CaveSummaryViewModel> GetSingle(int id)
+        {
+            if (id < 1)
+                throw new ArgumentOutOfRangeException(nameof(id), id, "Id cannot be lower than 1.");
+
+            var bottleDb = await _cavesRepository.GetSingle(id);
+
+            return bottleDb;
+        }
+
         public async Task<Cave> CreateAsync(CreateCaveDto caveToCreate)
         {
             if (caveToCreate == null)
