@@ -5,10 +5,6 @@
 
 > Create by Ethan Marchand Info3e
 
-## Start the Development server
-
-> Run `dotnet run`
-
 ## Build
 
 > Run `dotnet build`
@@ -18,7 +14,14 @@
 > Only `BottlesServices` & `UsersServices` are tested
 > Run `dotnet run test`
 
+## Start the Development server
+
+> Run `dotnet run`
+> When the project has finished starting go to 'https://localhost:5001/swagger/index.html'.
+
 ## Diagrams
 
-> Diagrams are into `/`
+> Diagrams are into `/` Open it into 'draw.io' (https://app.diagrams.net/)
+
+
 
