@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Epsic_Cave_A_Vin_Ethan.Repositories;
+using System.Text.Json.Serialization;
 
 namespace Epsic_Cave_A_Vin_Ethan
 {
@@ -28,6 +29,7 @@ namespace Epsic_Cave_A_Vin_Ethan
             services.AddControllers().AddJsonOptions(jsonOptions =>
             {
                 jsonOptions.JsonSerializerOptions.PropertyNamingPolicy = null;
+                jsonOptions.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
 
             services.AddSwaggerGen(c =>

@@ -62,7 +62,8 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
                 CaveId = bottleToCreate.CaveId,
                 Amount = bottleToCreate.Amount,
                 PricePerBottle = bottleToCreate.PricePerBottle,
-                ImageUrl = bottleToCreate.ImageUrl ?? "/assets/img/image-not-found.png"
+                ImageUrl = bottleToCreate.ImageUrl 
+                //?? "/assets/img/image-not-found.png"
             };
 
             _context.Bottles.Add(bottleDb);

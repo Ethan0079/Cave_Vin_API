@@ -21,10 +21,11 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             {
                 Id = t.Id,
                 Firstname = t.Firstname,
-                LastName = t.LastName,
+                Lastname = t.Lastname,
                 Email = t.Email,
                 Age = t.Age,
-                Type = t.Type
+                Type = t.Type,
+                Password = t.Password
             }).FirstOrDefaultAsync(c => c.Id == id);
         }
 
@@ -33,9 +34,10 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             var user = await _context.Users.FirstAsync(c => c.Id == id);
 
             user.Firstname = userToUpdate.Firstname;
-            user.LastName = userToUpdate.LastName;
+            user.Lastname = userToUpdate.Lastname;
             user.Email = userToUpdate.Email;
             user.Age = userToUpdate.Age;
+            user.Password = userToUpdate.Password;
 
             await _context.SaveChangesAsync();
 
@@ -47,9 +49,10 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             var userDb = new User
             {
                 Firstname = userToCreate.Firstname,
-                LastName = userToCreate.LastName,
+                Lastname = userToCreate.Lastname,
                 Email = userToCreate.Email,
-                Age = userToCreate.Age
+                Age = userToCreate.Age,
+                Password = userToCreate.Password
             };
 
             _context.Users.Add(userDb);
@@ -65,7 +68,7 @@ namespace Epsic_Cave_A_Vin_Ethan.Repositories
             {
                 Id = t.Id,
                 Firstname = t.Firstname,
-                Lastname = t.LastName
+                Lastname = t.Lastname
             }).ToListAsync();
         }
         
